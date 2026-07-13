@@ -173,7 +173,7 @@ void injectDLL(DWORD processId, const std::vector<BYTE>& dllBuffer) {
 }
 
 int main() {
-    const std::string dllPath = "C:\Users\archc\source\repos\Test\x64\Debug\Test.dll";  // change this to ur cheat dll file path
+    const std::string dllPath = "C:\path\to\cheat.dll";  // change this to ur cheat dll file path
     printColored("Waiting for Minecraft or Feather Launcher to start...", 10, 0);
 
    
