@@ -174,14 +174,14 @@ void injectDLL(DWORD processId, const std::vector<BYTE>& dllBuffer) {
 
 int main() {
     const std::string dllPath = "C:\path\to\cheat.dll";  // change this to ur cheat dll file path
-    printColored("Waiting for Minecraft or Feather Launcher to start...", 10, 0);
+    printColored("Waiting for Minecraft to start...", 10, 0);
 
    
     while (!isMinecraftRunning()) {
         Sleep(1000);  
     }
 
-    printColored("Minecraft or Feather Launcher detected! Reading DLL file...", 10, 0);
+    printColored("Minecraft detected! Reading DLL file...", 10, 0);
     std::vector<BYTE> dllBuffer = readDLL(dllPath);
     if (dllBuffer.empty()) {
         return 1;  
@@ -217,11 +217,11 @@ int main() {
     CloseHandle(hSnapshot);
 
     if (processId == 0) {
-        printColored("Minecraft or Feather Launcher process not found", 12, 0);
+        printColored("Minecraft process not found", 12, 0);
         return 1;  
     }
 
-    printColored("Injecting DLL into Minecraft/Feather Launcher process", 10, 0);
+    printColored("Injecting DLL into Minecraft process", 10, 0);
     injectDLL(processId, dllBuffer);
 
     return 0;
